@@ -41,12 +41,21 @@ public class SpeeDemon3_10 {
                 // Si todo va bien (es decir, 200 que ya hemos comprobado con anterioridad), el servidor devuelve
                 //  el mensaje de respuesta HTTP que lleva los datos.
                 Scanner sc = new Scanner(urlApi.openStream());
-
                 while(sc.hasNext()) {
                     infoString.append(sc.nextLine());
                 }
 
+                // Cerramos el Scanner
                 sc.close();
+
+                // Lo guardamos en un array dividiendolo por las comas
+                String[] data = infoString.toString().split(",");
+
+                // Recorremos e imprimimos por consola
+                for (String d : data) {
+                    System.out.println(d);
+                }
+                
 
             }
 
